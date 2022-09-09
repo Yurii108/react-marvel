@@ -8,10 +8,6 @@ import './randomChar.scss';
 
 
 class RandomChar extends Component {
-    constructor(props) {
-        super(props);
-        this.updateChar();
-    }
 
     state = {
         char: {},
@@ -20,6 +16,15 @@ class RandomChar extends Component {
     }
 
     marvelServer = new MarvelService();
+
+    componentDidMount() {
+        this.updateChar();
+        // this.timerId = setInterval(this.updateChar, 3000);
+    }
+
+    componentWillUnmount() {
+        // clearTimeout(this.timerId);
+    }
 
     onCharLoaded = (char) => {
         this.setState({
@@ -48,7 +53,7 @@ class RandomChar extends Component {
         const errorMessage = error ? <ErrorMessage /> : null;
         const spinner = loading ? <Spinner /> : null;
         const content = !(loading || error) ? <View char={char} /> : null;
-        
+
         return (
             <div className="randomchar">
                 {errorMessage}

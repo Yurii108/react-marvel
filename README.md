@@ -1,5 +1,10 @@
 ## Marvel starter
 
+1. Receive data from API, and create a component which can get necessary data - change state.
+2. Good tone of application, the message show about error if api doesn't answer or need little wait.
+3. life cycle: componentDidMount(), componentWillUnmount()
+
+
 <!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
