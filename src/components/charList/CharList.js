@@ -5,8 +5,6 @@ import ErrorMessage from '../errorMessage/ErrorMessage';
 
 import './charList.scss';
 
-import abyss from '../../resources/img/abyss.jpg';
-
 
 class CharList extends Component {
     state = {
@@ -41,11 +39,12 @@ class CharList extends Component {
     renderItems(arr) {
         const items = arr.map((item) => {
             const http = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg';
-            let objectFit = item.thumbnail === http ? { objectFit: 'contain' } : null;
+            let objectFit = item.thumbnail === http ? { 'objectFit': 'fill' } : null;
 
             return (
                 <li className="char__item"
-                    key={item.id}>
+                    key={item.id}
+                    onClick={() => this.props.onCharSelected(item.id)}>
                     <img src={item.thumbnail} alt={item.name} style={objectFit} />
                     <div className="char__name">{item.name}</div>
                 </li>
