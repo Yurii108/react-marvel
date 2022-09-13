@@ -2,7 +2,9 @@
 
 1. Receive data from API, and create a component which can get necessary data - change state.
 2. Good tone of application, the message show about error if api doesn't answer or need little wait.
-3. life cycle: componentDidMount(), componentWillUnmount()
+3. life cycle: componentDidMount(), componentWillUnmount();
+4. Сatching errors with componentDidCatch() and placing the component into each other 'RandomChar' into 'ErrorBoundary';
+
 
 
 <!-- # Getting Started with Create React App

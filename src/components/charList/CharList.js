@@ -16,6 +16,7 @@ class CharList extends Component {
     marvelServer = new MarvelService();
 
     componentDidMount() {
+        
         this.marvelServer
             .getAllCharacters()
             .then(this.onCharListLoaded)
