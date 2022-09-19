@@ -1,6 +1,6 @@
 import { Component } from 'react/cjs/react.development';
 import PropTypes from 'prop-types';
-import MarvelService from '../../services/MarvelServices';
+import MarvelService from '../../services/MarvelServices.js';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Skeleton from '../skeleton/Skeleton';
