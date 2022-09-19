@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import mjolnir from '../../resources/img/mjolnir.png';
-import MarvelService from '../../services/MarvelServices';
+import MarvelService from '../../services/MarvelServices.js';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 
