@@ -5,7 +5,7 @@
 3. life cycle: componentDidMount(), componentWillUnmount();
 4. Сatching errors with componentDidCatch() and placing the component into each other 'RandomChar' into 'ErrorBoundary';
 5. I’ve rewritten classes like hooks(useEffect, useState).
-6. 
+6. Creating own hooks: useHttp, useMarvelService.. 
 
 
 
