@@ -6,11 +6,9 @@ import ErrorMessage from '../errorMessage/ErrorMessage';
 
 import './randomChar.scss';
 
-
 const RandomChar = () => {
 
     const [char, setChar] = useState({});
-
 
     const { error, loading, clearError, getCharacter } = useMarvelService();
 
