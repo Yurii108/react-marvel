@@ -10,6 +10,7 @@ const ComicsList = () => {
     const [comicList, setComicList] = useState([]);
     const [offsetComic, setOffsetComic] = useState(100);
     const [newItemLoading, setNewItemLoading] = useState(false);
+    const [comicEnded, setComicEnded] = useState(false);
 
     const { loading, error, getAllComics } = useMarvelService();
 
@@ -25,16 +26,15 @@ const ComicsList = () => {
 
     const onComicListLoaded = (newComicList) => {
 
-        // let ended = false;
-        // if (newComicList.length < 8) {
-        //     ended = true;
-        // }
+        let ended = false;
+        if (newComicList.length < 8) {
+            ended = true;
+        }
 
         setComicList(comicList => [...comicList, ...newComicList]);
         setNewItemLoading(newItemLoading => false);
         setOffsetComic(offsetComic => offsetComic + 8);
-        // setComicEnded(comicEnded => ended);
-        console.log(newComicList)
+        setComicEnded(comicEnded => ended);
     }
 
     const renderItems = (arr) => {
@@ -69,7 +69,8 @@ const ComicsList = () => {
             <button
                 disabled={newItemLoading}
                 onClick={() => onRequest(offsetComic)}
-                className="button button__main button__long">
+                className="button button__main button__long"
+                style={{ 'display': comicEnded ? 'none' : 'block' }}>
                 <div className="inner">load more</div>
             </button>
         </div>
