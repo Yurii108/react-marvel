@@ -6,6 +6,7 @@
 4. Сatching errors with componentDidCatch() and placing the component into each other 'RandomChar' into 'ErrorBoundary';
 5. I’ve rewritten classes like hooks(useEffect, useState).
 6. Creating own hooks: useHttp, useMarvelService.. 
+7. Nav in app with Router v5. Used link, router, activeStyle
 
 
 
