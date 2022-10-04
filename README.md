@@ -7,6 +7,7 @@
 5. Rewritten classes on hooks(useEffect, useState, use Ref).
 6. Creating own hooks: useHttp, useMarvelService.. 
 7. Navigation in app with Router v5. Used link, router, activeStyle. After update on v6.4.
+8. Method React.lazy - how we can use and why. Used a little chunk in the project.
 
 
 
