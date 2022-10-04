@@ -7,7 +7,7 @@ const useMarvelService = () => {
     const _apiBase = 'https://gateway.marvel.com:443/v1/public';
     const _apiKey = 'apikey=9305bd22b8ae7e61414ce4f36b73001e';
     const _baseOffset = '315';
-    const _offsetComic = '100';
+    const _offsetComic = '444';
 
     const getAllCharacters = async (offset = _baseOffset) => {
         const res = await request(`${_apiBase}/characters?limit=9&offset=${offset}&${_apiKey}`);
@@ -23,17 +23,24 @@ const useMarvelService = () => {
 
     const getAllComics = async (offsetComic = _offsetComic) => {
         const res = await request(`${_apiBase}/comics?limit=8&offset=${offsetComic}&${_apiKey}`);
-        return res.data.results.map(_transformComec);
-
+        return res.data.results.map(_transformComics);
     }
 
-    const _transformComec = (comec) => {
+    const getComic = async (id) => {
+        const res = await request(`${_apiBase}/comics/${id}?${_apiKey}`);
+        return _transformComics(res.data.results[0]);
+    }
+
+    const _transformComics = (comic) => {
         return {
-            id: comec.id,
-            title: comec.title,
-            price: comec.prices[0].price,
-            thumbnail: comec.thumbnail.path + '.' + comec.thumbnail.extension,
-            homepage: comec.urls[0].url
+            id: comic.id,
+            title: comic.title,
+            description: comic.description || 'There is no description',
+            pageCount: comic.pageCount ? `${comic.pageCount} p.` : 'No information about the number of pages',
+            price: comic.prices[0].price,
+            thumbnail: comic.thumbnail.path + '.' + comic.thumbnail.extension,
+            homepage: comic.urls[0].url,
+            language: comic.textObjects.language || 'en-us',
         }
     }
 
@@ -49,7 +56,7 @@ const useMarvelService = () => {
         }
     }
 
-    return { error, loading, clearError, getAllCharacters, getCharacter, getAllComics }
+    return { error, loading, clearError, getAllCharacters, getCharacter, getComic, getAllComics }
 }
 
 export default useMarvelService;
