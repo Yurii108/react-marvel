@@ -53,9 +53,9 @@ const CharList = (props) => {
             let objectFit = item.thumbnail === http ? { 'objectFit': 'fill' } : null;
 
             return (
-                <CSSTransition key={item.id} in={true} timeout={500} classNames="char__item">
+                <CSSTransition key={item.id} timeout={500} classNames="char__item">
                     <li className="char__item"
-                        tabIndex={0}
+                    tabIndex={0}
                         ref={el => itemRefs.current[i] = el}
                         onClick={() => {
                             props.onCharSelected(item.id);

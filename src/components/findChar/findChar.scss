@@ -1,0 +1,51 @@
+@import '../../style/variables.scss';
+
+.find-char {
+    position: absolute;
+    top: 630px;
+    right: 0;
+    padding: 25px;
+    width: 425px;
+    min-height: 127px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+
+    &__name {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    &__button {
+        width: 101px;
+        height: 38px;
+    }
+
+    &__input {
+        width: 250px;
+        height: 38px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        padding: 10px;
+        color: rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.25);
+        border: 1px;
+    }
+
+    &__wrapper {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__answer {
+        margin-top: 25px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        color: $main-color;
+    }
+}
