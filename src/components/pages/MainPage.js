@@ -25,11 +25,14 @@ const MainPage = () => {
                 <ErrorBoundary>
                     <CharList onCharSelected={onCharSelected} />
                 </ErrorBoundary>
-                <ErrorBoundary>
-                    <CharInfo charId={selectedChar} />
-                </ErrorBoundary>
-                <FindChar />
-
+                <div>
+                    <ErrorBoundary>
+                        <CharInfo charId={selectedChar} />
+                    </ErrorBoundary>
+                    <ErrorBoundary>
+                        <FindChar />
+                    </ErrorBoundary>
+                </div>
             </div>
             <img className="bg-decoration" src={decoration} alt="vision" />
         </>
