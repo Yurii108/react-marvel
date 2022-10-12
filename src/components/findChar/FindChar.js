@@ -9,12 +9,12 @@ import useMarvelService from '../../services/MarvelService';
 import './findChar.scss'
 
 const FindChar = () => {
-    const [char, setChat] = useState(null);
+    const [char, setChar] = useState(null);
 
     const { loading, error, getCharacterByName, clearError } = useMarvelService();
 
     const onCharLoaded = (char) => {
-        setChat(char)
+        setChar(char)
     }
 
     const updateChar = (name) => {
