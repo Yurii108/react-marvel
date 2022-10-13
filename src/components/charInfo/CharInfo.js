@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import useMarvelService from '../../services/MarvelService';
-import setContend from '../../utils/setContend';
+import setContent from '../../utils/setContent';
 
 import './charInfo.scss';
 
@@ -34,7 +34,7 @@ const CharInfo = (props) => {
 
     return (
         <div className="char__info">
-            {setContend(process, View, char)}
+            {setContent(process, View, char)}
         </div>
     )
 }

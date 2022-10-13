@@ -2,7 +2,7 @@ import Spinner from '../components/spinner/Spinner';
 import ErrorMessage from '../components/errorMessage/ErrorMessage';
 import Skeleton from '../components/skeleton/Skeleton';
 
-const setContend = (process, Component, data) => {
+const setContent = (process, Component, data) => {
     switch (process) {
         case 'waiting':
             return <Skeleton />
@@ -21,4 +21,4 @@ const setContend = (process, Component, data) => {
     }
 }
 
-export default setContend;
+export default setContent;
