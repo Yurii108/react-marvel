@@ -2,9 +2,7 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import useMarvelService from '../../services/MarvelService';
-import Spinner from '../spinner/Spinner';
-import ErrorMessage from '../errorMessage/ErrorMessage';
-import Skeleton from '../skeleton/Skeleton';
+import setContend from '../../utils/setContend';
 
 import './charInfo.scss';
 
@@ -12,7 +10,7 @@ const CharInfo = (props) => {
 
     const [char, setChar] = useState(null);
 
-    const { error, loading, getCharacter, clearError, process, setProcess } = useMarvelService();
+    const { getCharacter, clearError, process, setProcess } = useMarvelService();
 
     useEffect(() => {
         updateChar()
@@ -34,39 +32,15 @@ const CharInfo = (props) => {
         setChar(char);
     }
 
-    const setContend = (process, char) => {
-        switch (process) {
-            case 'waiting':
-                return <Skeleton />
-                break;
-            case 'loading':
-                return <Spinner />
-                break;
-            case 'confirmed':
-                return <View char={char} />
-                break;
-            case 'error':
-                return <ErrorMessage />
-                break;
-            default:
-                throw new Error('Unexpected process state');
-        }
-    }
-
-    // const skeleton = char || loading || error ? null : <Skeleton />;
-    // const errorMessage = error ? <ErrorMessage /> : null;
-    // const spinner = loading ? <Spinner /> : null;
-    // const content = !(loading || error || !char) ? <View char={char} /> : null;
-
     return (
         <div className="char__info">
-            {setContend(process, char)}
+            {setContend(process, View, char)}
         </div>
     )
 }
 
-const View = ({ char }) => {
-    const { name, thumbnail, description, homepage, wiki, comics } = char;
+const View = ({ data }) => {
+    const { name, thumbnail, description, homepage, wiki, comics } = data;
     const http = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg';
     let objectFit = thumbnail === http ? { 'objectFit': 'fill' } : null;
     return (
