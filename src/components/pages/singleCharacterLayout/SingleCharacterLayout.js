@@ -1,10 +1,8 @@
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
-
 import './singleCharacterLayout.scss';
 
 const SingleCharacterLayout = ({ data }) => {
-    const { title, description, thumbnail } = data;
+    const {name, description, thumbnail, title} = data;
 
     return (
         <div className="single-comic">
@@ -15,15 +13,13 @@ const SingleCharacterLayout = ({ data }) => {
                 />
                 <title>{title}</title>
             </Helmet>
-            <img src={thumbnail} alt={title} className="single-comic__img" />
+            <img src={thumbnail} alt={name} className="single-comic__char-img"/>
             <div className="single-comic__info">
-                <h2 className="single-comic__name">{title}</h2>
+                <h2 className="single-comic__name">{name}</h2>
                 <p className="single-comic__descr">{description}</p>
             </div>
-            <Link to="/comics" className="single-comic__back">Back to all</Link>
         </div>
     )
-
 }
 
 export default SingleCharacterLayout;
