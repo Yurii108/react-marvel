@@ -1,13 +1,13 @@
-## Marvel starter
+## [Marvel starter](https://marvel-s.herokuapp.com)
+
 
 1. Receive data from API, and create a component which can get necessary data - change state.
 2. Good tone of application, the message show about error if api doesn't answer or need little wait.
-3. life cycle: componentDidMount(), componentWillUnmount();
-4. Сatching errors with componentDidCatch() and placing the component into each other 'RandomChar' into 'ErrorBoundary';
-5. Rewritten classes on hooks(useEffect, useState, use Ref).
-6. Creating own hooks: useHttp, useMarvelService.. 
-7. Navigation in app with Router v5. Used link, router, activeStyle. After update on v6.4.
-8. Method React.lazy - how we can use and why. Used a little chunk in the project.
+3. life cycle: componentDidMount(), componentWillUnmount(). Сatching errors with componentDidCatch() and placing the component into each other 'RandomChar' into 'ErrorBoundary';
+4. Rewritten classes on hooks(useEffect, useState, use Ref).
+5. Creating own hooks: useHttp, useMarvelService.. 
+6. Navigation in app with Router v5. Used link, router, activeStyle. After update on v6.4.
+7. Used Libs Formik, SEO React-helmet, Finite-state machine(FSM);
 
 
 
