@@ -1,4 +1,4 @@
-## [Marvel starter](https://marvel-s.herokuapp.com)
+## [Marvel starts](https://marvel-s.herokuapp.com)
 
 
 1. Receive data from API, and create a component which can get necessary data - change state.
