@@ -10,16 +10,12 @@ const setContent = (process, Component, newItemLoading) => {
     switch (process) {
         case 'waiting':
             return <Spinner />
-            break;
         case 'loading':
             return newItemLoading ? <Component /> : <Spinner />
-            break;
         case 'confirmed':
             return <Component />
-            break;
         case 'error':
             return <ErrorMessage />
-            break;
         default:
             throw new Error('Unexpected process state');
     }
@@ -32,10 +28,11 @@ const ComicsList = () => {
     const [newItemLoading, setNewItemLoading] = useState(false);
     const [comicEnded, setComicEnded] = useState(false);
 
-    const { loading, error, getAllComics, process, setProcess } = useMarvelService();
+    const { getAllComics, process, setProcess } = useMarvelService();
 
     useEffect(() => {
-        onRequest(offsetComic, true)
+        onRequest(offsetComic, true);
+        // eslint-disable-next-line
     }, [])
 
     const onRequest = (offsetComic, initial) => {

@@ -11,12 +11,13 @@ const SinglePage = ({ Component, dataType }) => {
     const { getComic, getCharacter, clearError, process, setProcess } = useMarvelService();
 
     useEffect(() => {
-        updateData()
+        updateData();
+        // eslint-disable-next-line
     }, [id]);
 
     const updateData = () => {
         clearError();
-
+        // eslint-disable-next-line
         switch (dataType) {
             case 'comic':
                 getComic(id).then(onDataLoaded).then(() => setProcess('confirmed'))
