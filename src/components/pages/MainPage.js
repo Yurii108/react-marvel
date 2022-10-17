@@ -35,10 +35,10 @@ const MainPage = () => {
                 </ErrorBoundary>
                 <div>
                     <ErrorBoundary>
-                        <CharInfo charId={selectedChar} />
+                        <CharSearchForm />
                     </ErrorBoundary>
                     <ErrorBoundary>
-                        <CharSearchForm />
+                        <CharInfo charId={selectedChar} />
                     </ErrorBoundary>
                 </div>
             </div>

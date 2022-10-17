@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import useMarvelService from '../../services/MarvelService';
@@ -9,6 +9,7 @@ import './charInfo.scss';
 const CharInfo = (props) => {
 
     const [char, setChar] = useState(null);
+    const [top, setTop] = useState(0);
 
     const { getCharacter, clearError, process, setProcess } = useMarvelService();
 
@@ -16,6 +17,21 @@ const CharInfo = (props) => {
         updateChar()
         // eslint-disable-next-line
     }, [props.charId]);
+
+    useEffect(() => {
+        document.addEventListener("scroll", scrollHandler)
+
+        return function () {
+            document.removeEventListener("scroll", scrollHandler)
+        }
+    }, [])
+
+    const scrollHandler = (e) => {
+        console.log(e.target.documentElement.scrollTop)
+
+        setTop(e.target.documentElement.scrollTop)
+    }
+
 
     const updateChar = () => {
         const { charId } = props;
@@ -33,8 +49,10 @@ const CharInfo = (props) => {
         setChar(char);
     }
 
+    const mySecondRef = useRef();
+
     return (
-        <div className="char__info">
+        <div className="char__info" ref={mySecondRef} style={top >= 600 ? { position: "absolute", top: `${top - 146}px` } : {}}>
             {setContent(process, View, char)}
         </div>
     )
