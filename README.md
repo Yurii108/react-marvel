@@ -1,5 +1,8 @@
 ## [Marvel starts](https://marvel-s.herokuapp.com)
 
+The data we receive is from [marvel.com](https://www.marvel.com/) The Characters - main page has a loading of randomized characters, a list of cards and a search for a character by name.  When clicking on a character from the list, you can see the character’s description and the comic book list in the right hand column. 
+The Comics - next page, comic book list. You can also select and go to the next page with description.
+
 
 1. Receive data from API, and create a component which can get necessary data - change state.
 2. Good tone of application, the message show about error if api doesn't answer or need little wait.
