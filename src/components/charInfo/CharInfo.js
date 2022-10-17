@@ -27,11 +27,8 @@ const CharInfo = (props) => {
     }, [])
 
     const scrollHandler = (e) => {
-        console.log(e.target.documentElement.scrollTop)
-
         setTop(e.target.documentElement.scrollTop)
     }
-
 
     const updateChar = () => {
         const { charId } = props;
