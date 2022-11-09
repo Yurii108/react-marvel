@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 import AppHeader from "../appHeader/AppHeader";
 import Spinner from "../spinner/Spinner";
@@ -14,7 +14,7 @@ const SingleCharacterLayout = lazy(() => import('../pages/singleCharacterLayout/
 const App = () => {
 
     return (
-        <Router>
+        <BrowserRouter>
             <div className="app">
                 <AppHeader />
                 <main>
@@ -35,7 +35,7 @@ const App = () => {
                     </Suspense>
                 </main>
             </div>
-        </Router>
+        </BrowserRouter>
     )
 }
 
