@@ -11,7 +11,6 @@ const SinglePage = lazy(() => import('../pages/SinglePage'));
 const SingleComicLayout = lazy(() => import('../pages/singleComicLayout/SingleComicLayout'));
 const SingleCharacterLayout = lazy(() => import('../pages/singleCharacterLayout/SingleCharacterLayout'));
 
-
 const App = () => {
 
     return (
