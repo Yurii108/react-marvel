@@ -14,14 +14,15 @@ const SingleCharacterLayout = lazy(() => import('../pages/singleCharacterLayout/
 const App = () => {
 
     return (
-        <BrowserRouter>
+       <>
+        <BrowserRouter basename="/">
             <div className="app">
                 <AppHeader />
                 <main>
                     <Suspense fallback={<Spinner />}>
                         <Routes>
-                            <Route path="/" element={<MainPage />} />
-                            <Route path="/comics" element={<ComicsPage />} />
+                            <Route path='/' element={<MainPage />} />
+                            <Route path='/comics' element={<ComicsPage />} />
                             <Route path='/comics/:id'
                                 element={<SinglePage
                                     Component={SingleComicLayout}
@@ -36,6 +37,7 @@ const App = () => {
                 </main>
             </div>
         </BrowserRouter>
+       </>
     )
 }
 
