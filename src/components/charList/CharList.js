@@ -45,7 +45,7 @@ const CharList = (props) => {
             .then(() => setProcess('confirmed'))
     }
 
-    const onCharListLoaded = (newCharList) => {
+    const onCharListLoaded = async (newCharList) => {
         let ended = false;
         if (newCharList.length < 9) {
             ended = true;
@@ -78,13 +78,13 @@ const CharList = (props) => {
                         onClick={() => {
                             props.onCharSelected(item.id);
                             focusOnItem(i);
-                        }}>
+                        }}
                         onKeyPress={(e) => {
                             if (e.key === ' ' || e.key === 'Enter') {
                                 props.onCharSelected(item.id);
                                 focusOnItem(i);
                             }
-                        }}
+                        }}>
                         <img src={item.thumbnail} alt={item.name} style={objectFit} />
                         <div className="char__name">{item.name}</div>
                     </li>
