@@ -1,4 +1,4 @@
-## [Marvel starts](https://marvel-s.herokuapp.com)
+## [Marvel starts](https://marvel-s.vercel.app)
 
 The data we receive is from [marvel.com](https://www.marvel.com/). <br/>
 
