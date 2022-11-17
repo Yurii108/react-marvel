@@ -4,6 +4,8 @@ import useMarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 
+import imegeNotFount from '../../resources/img/imege_not_found.png';
+
 import './comicsList.scss';
 
 const setContent = (process, Component, newItemLoading) => {
@@ -24,7 +26,7 @@ const setContent = (process, Component, newItemLoading) => {
 const ComicsList = () => {
 
     const [comicList, setComicList] = useState([]);
-    const [offsetComic, setOffsetComic] = useState(100);
+    const [offsetComic, setOffsetComic] = useState(130);
     const [newItemLoading, setNewItemLoading] = useState(false);
     const [comicEnded, setComicEnded] = useState(false);
 
@@ -57,10 +59,12 @@ const ComicsList = () => {
 
     const renderItems = (arr) => {
         const items = arr.map((item, i) => {
+            const http = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg';
+            let objectFit = item.thumbnail === http ? imegeNotFount : item.thumbnail;
             return (
                 <li key={i} className="comics__item">
                     <Link to={`/comics/${item.id}`}>
-                        <img src={item.thumbnail} alt={item.title} className="comics__item-img" />
+                        <img src={objectFit} alt={item.title} className="comics__item-img" />
                         <div className="comics__item-name">{item.title}</div>
                         <div className="comics__item-price">{item.price} $</div>
                     </Link>
@@ -76,7 +80,7 @@ const ComicsList = () => {
 
     return (
         <div className="comics__list">
-             { setContent(process, () => renderItems(comicList), newItemLoading)}
+            {setContent(process, () => renderItems(comicList), newItemLoading)}
             <button
                 disabled={newItemLoading}
                 onClick={() => onRequest(offsetComic)}

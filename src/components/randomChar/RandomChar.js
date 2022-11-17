@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import mjolnir from '../../resources/img/mjolnir.png';
+import imegeNotFount from '../../resources/img/imegaNotFound180.png';
 import useMarvelService from '../../services/MarvelService';
 import setContent from '../../utils/setContent';
 
@@ -52,10 +53,10 @@ const View = ({ data }) => {
     const { name, description, thumbnail, homepage, wiki } = data;
 
     const http = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg';
-    const objectFit = thumbnail === http ? { 'objectFit': 'fill' } : null;
+    const objectFit = thumbnail === http ? imegeNotFount : thumbnail;
     return (
         <div className="randomchar__block">
-            <img src={thumbnail} style={objectFit} alt="Random character" className="randomchar__img" />
+            <img src={objectFit} alt="Random character" className="randomchar__img" />
             <div className="randomchar__info">
                 <p className="randomchar__name">{name}</p>
                 <p className="randomchar__descr">

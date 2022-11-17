@@ -4,6 +4,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import useMarvelService from '../../services/MarvelService';
 
+import imegeNotFount from '../../resources/img/imegaNotFound200.png';
+
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 
@@ -68,7 +70,7 @@ const CharList = (props) => {
     const renderItems = (arr) => {
         const items = arr.map((item, i) => {
             const http = 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg';
-            let objectFit = item.thumbnail === http ? { 'objectFit': 'fill' } : null;
+            let objectFit = item.thumbnail === http ? imegeNotFount : item.thumbnail;
 
             return (
                 <CSSTransition key={item.id} timeout={500} classNames="char__item">
@@ -85,7 +87,7 @@ const CharList = (props) => {
                                 focusOnItem(i);
                             }
                         }}>
-                        <img src={item.thumbnail} alt={item.name} style={objectFit} />
+                        <img src={objectFit} alt={item.name} />
                         <div className="char__name">{item.name}</div>
                     </li>
                 </CSSTransition>
