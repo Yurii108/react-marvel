@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import mjolnir from '../../resources/img/mjolnir.png';
-import imegeNotFount from '../../resources/img/imegaNotFound180.png';
+import imegeNotFount from '../../resources/img/imegaNotFound200.png';
 import useMarvelService from '../../services/MarvelService';
 import setContent from '../../utils/setContent';
 

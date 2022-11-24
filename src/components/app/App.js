@@ -15,7 +15,7 @@ const App = () => {
 
     return (
        <>
-        <BrowserRouter basename="/">
+        <BrowserRouter>
             <div className="app">
                 <AppHeader />
                 <main>
